@@ -1,0 +1,44 @@
+
+A = [[1, 2, 3],[4, 5, 6],[7, 8, 9]] 
+B = [[9, 8, 7],[6, 5, 4],[3, 2, 1]] 
+def add_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(A[0])):
+            row.append(A[i][j] + B[i][j])
+        result.append(row)
+    return result
+def subtract_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(A[0])):
+            row.append(A[i][j] - B[i][j])
+        result.append(row)
+    return result
+def multiply_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(B[0])):
+            sum = 0
+            for k in range(len(B)):
+                sum += A[i][k] * B[k][j]
+            row.append(sum)
+        result.append(row)
+    return result
+
+def transpose_matrix(A):
+    result = []
+    for i in range(len(A[0])):
+        row = []
+        for j in range(len(A)):
+            row.append(A[j][i])
+        result.append(row)
+    return result
+
+print("Addition of A and B:", add_matrices(A, B))
+print("Subtraction of A and B:", subtract_matrices(A, B))
+print("Multiplication of A and B:", multiply_matrices(A, B))
+print("Transpose of A:", transpose_matrix(A))
